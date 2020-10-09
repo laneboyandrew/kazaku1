@@ -1,13 +1,1867 @@
-{% extends 'base.html.twig' %}
-{% block title %}{{ title }}{% endblock %}
-{% block body %}
-    <div class="container-fluid">
-        <div class="row no-gutters justify-content-center mt-10">
-            <div class="col-12 col-lg-6 col-md-6">
-                <h1 class="display-4 text-center">
-                    {{ title }}
-                </h1>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Кадровый резерв</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayser', 'GTM-56965FL');
+    </script>
+    <!-- End Google Tag Manager -->
+
+
+    <meta property="og:title" content="Кадровый резерв">
+    <meta property="og:description" content="">
+
+
+
+    <link href="http://synergy.ru/img/favicon.ico" type="image/x-icon" rel="icon">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.0/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+{#    In this template images download to css, i cannot upload image from db to css that is why i'm not importing the css but write it inside html file#}
+{#    <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">#}
+    <link href="{{asset('assets/css/fonts.css')}}" rel="stylesheet">
+
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script><![endif]-->
+    <!--[if lte IE 9]><script src="http://phpbbex.com/oldies/oldies.js" charset="utf-8"></script><![endif]-->
+
+    <!--[if lt IE 9]><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script><![endif]-->
+    <!--[if gte IE 9]><!-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <!--<![endif]-->
+    <style>
+
+        img {
+            vertical-align: top;
+            transition: all .3s ease 0s;
+        }
+
+        a {
+            color: #2D549A;
+            outline: none;
+        }
+
+        a:hover,
+        a img:hover {
+            opacity: 0.8;
+            color: #D2232A;
+            text-decoration: none
+        }
+
+        body {
+            background: #fff;
+            color: #27292b;
+            font-size: 16px;
+            font-family: 'MuseoSansCyrl', Arial, Helvetica, sans-serif;
+            line-height: 1.25;
+        }
+
+        h2,
+        h3 {
+            font-size: 36px;
+            font-family: 'MuseoSansCyrl', Arial, Helvetica, sans-serif;
+            font-weight: 500;
+            text-transform: uppercase;
+            margin: 0 0 30px;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .left {
+            float: left;
+        }
+
+        .right {
+            float: right;
+        }
+
+        /* Forms */
+
+        .form > p {
+            font-size: 14px;
+            line-height: 18px;
+            margin: 0 0 20px;
+            position: relative;
+            clear: both;
+        }
+
+        .form input.input {
+            font-size: 18px;
+            line-height: 1.75;
+            font-weight: 400;
+            border: 1px solid #e0e0e0;
+            outline: none;
+            margin: 0;
+            padding: 0px 8px;
+            width: 440px;
+            height: 32px;
+            vertical-align: top;
+            transition: all .3s ease 0s;
+        }
+
+        .form textarea {
+            overflow-x: hidden;
+            resize: vertical;
+            height: 82px;
+        }
+
+        .form .error {
+            box-shadow: inset 0 0 2px 0 #F00;
+        }
+
+        .form label.error,
+        .form span.error {
+            display: none !important;
+        }
+
+        /* Fancybox */
+
+
+        /* Carousel */
+
+        .wrapper {
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        /* Bootstrap
+        -----------------------------------------------------------------------------*/
+
+        .container {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .row {
+            margin-left: -10px;
+            margin-right: -10px;
+        }
+
+        .col-xs-1,
+        .col-sm-1,
+        .col-md-1,
+        .col-lg-1,
+        .col-xs-2,
+        .col-sm-2,
+        .col-md-2,
+        .col-lg-2,
+        .col-xs-3,
+        .col-sm-3,
+        .col-md-3,
+        .col-lg-3,
+        .col-xs-4,
+        .col-sm-4,
+        .col-md-4,
+        .col-lg-4,
+        .col-xs-5,
+        .col-sm-5,
+        .col-md-5,
+        .col-lg-5,
+        .col-xs-6,
+        .col-sm-6,
+        .col-md-6,
+        .col-lg-6,
+        .col-xs-7,
+        .col-sm-7,
+        .col-md-7,
+        .col-lg-7,
+        .col-xs-8,
+        .col-sm-8,
+        .col-md-8,
+        .col-lg-8,
+        .col-xs-9,
+        .col-sm-9,
+        .col-md-9,
+        .col-lg-9,
+        .col-xs-10,
+        .col-sm-10,
+        .col-md-10,
+        .col-lg-10,
+        .col-xs-11,
+        .col-sm-11,
+        .col-md-11,
+        .col-lg-11,
+        .col-xs-12,
+        .col-sm-12,
+        .col-md-12,
+        .col-lg-12 {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        /* Header
+        -----------------------------------------------------------------------------*/
+
+        .header {
+            background: #f5f5f5;
+            padding-bottom: 17px;
+        }
+
+        .header .logo {
+            margin-top: 15px;
+        }
+
+        .flex-cont {
+            display: flex;
+            align-items: center;
+        }
+
+        .header .logo IMG {
+            max-width: 100%;
+            /*max-width: 155px;*/
+            max-height: 39px;
+        }
+
+
+        .header .phone {
+            margin-top: 15px;
+            margin-left: auto;
+        }
+
+        @media (max-width:768px){
+            .header .logo IMG {
+                max-width: 240px;
+                max-height: 39px;
+            }
+            .header .phone {
+                display: flex;
+                justify-content: space-around;
+            }
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+
+        .menu-toggle .bar{
+            width: 25px;
+            height: 2px;
+            background: #3f3f3f;
+            margin: 3px auto;
+            -webkit-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+        }
+
+        @media (max-width:768px) {
+            .menu-toggle {
+                display: grid;
+                margin-top: 15px;
+                margin-right: 20px;
+            }
+            .header .phone {
+                position: absolute;
+                align-items: flex-start;
+                margin: 0;
+                top: -300px;
+            }
+
+            .header .phone.mobile-nav {
+                top: 55px;
+                position: absolute;
+                left: 0;
+                height: 30px;
+                width: 100%;
+                background: #f5f5f5;
+                z-index: 1000;
+                opacity: 1;
+                transition: 0.3s ease-in-out;
+            }
+        }
+
+
+        #mobile-menu.is-active .bar:nth-child(2){
+            opacity: 0;
+        }
+
+        #mobile-menu.is-active .bar:nth-child(1){
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        #mobile-menu.is-active .bar:nth-child(3){
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        @keyframes gradbar {
+            0% {
+                background-position: 0% 50%
+            }
+            50% {
+                background-position: 100% 50%
+            }
+            100% {
+                background-position: 0% 50%
+            }
+        }
+
+        .header .phone-number {
+            font-size: 16px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .header .phone-number A {
+            color: #242527;
+        }
+
+        /* -----------------------------------------------------------------------------*/
+
+        .button {
+            display: inline-block;
+            width: 100%;
+            max-width: 232px;
+            height: 43px;
+            background: #27292b;
+            box-shadow: 0 3px 0 #424345;
+            border: 0;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 43px;
+            color: #fff;
+            text-transform: uppercase;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            opacity: 1;
+        }
+
+        .button:hover,
+        .button:focus {
+            background: #000;
+            box-shadow: 0 -3px 0 #424345;
+            color: #fff;
+            opacity: 1;
+            text-decoration: none;
+        }
+
+        .title {
+            font: 500 45px 'Cormorant', serif;
+            line-height: 50px;
+            position: relative;
+        }
+
+        .title:before {
+            content: '';
+            position: absolute;
+            left: -53px;
+            top: 26px;
+            display: block;
+            width: 35px;
+            height: 4px;
+            background: #b55857;
+        }
+
+        .form-section {
+            padding: 28px 0 33px 0;
+            background: #b78b5c;
+        }
+
+        .landformbox {
+            float: left;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .landformbox-inner {
+            margin: 0 auto;
+        }
+
+        .formtitle {
+            font: 700 32px 'Cormorant', serif;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 21px;
+        }
+
+        .landformbox .form {
+            width: 100%;
+        }
+
+        .landformbox .form > P {
+            float: left;
+            clear: none;
+            width: 25.2%;
+            padding-right: 10px;
+        }
+
+        .landformbox .form .input {
+            width: 100%;
+            max-width: 232px;
+            height: 43px;
+            padding: 0 20px;
+            background: #fff;
+            border: 0;
+            font-size: 13px;
+            font-weight: 500;
+            color: #27292b;
+        }
+
+        .landformbox .form .submit {
+            width: 24.4%;
+            padding-right: 0;
+        }
+
+        .top-section {
+            position: relative;
+            padding-top: 51px;
+            background: #242527 url({{ asset('/images/thumbnails/') }}{{ image1 }}) no-repeat 50% 0;
+            background-size: cover;
+            color: #fff;
+            text-align: center;
+        }
+
+        .top-section__bg {
+            display: none;
+            position: absolute;
+            background: #00000063;
+            width: 100%;
+            z-index: 0;
+            left: 0;
+            top: 0;
+        }
+
+        @media (max-width:505px){
+            .top-section__bg {
+                display: block;
+                height: 300px;
+            }
+        }
+        @media (max-width:420px){
+            .top-section__bg {
+                height: 350px;
+            }
+        }
+
+        .top-section .extratitle {
+            position: relative;
+            z-index: 10;
+            font-size: 16px;
+            font-weight: 900;
+            color: #b78b5c;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        H1 {
+            position: relative;
+            z-index: 10;
+            font: 700 89px 'Cormorant', serif;
+            letter-spacing: -1px;
+            line-height: 71px;
+            margin: 0 0 5px 0;
+        }
+
+        H1:after {
+            position: relative;
+            z-index: 10;
+            content: '';
+            display: block;
+            width: 100%;
+            max-width: 502px;
+            height: 15px;
+            background: url({{ asset('/images/thumbnails/') }}{{ image2 }}) no-repeat 50% 0;
+            opacity: 0.4;
+            margin: 26px auto 0 auto;
+        }
+
+        .top-section .subtitle {
+            position: relative;
+            z-index: 10;
+            max-width: 500px;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 26px;
+            margin: 0 auto 206px auto;
+        }
+
+        .top-section-bar {
+            padding: 107px 0 62px 0;
+            background-image: linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.7));
+            background-image: -o-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.7));
+            background-image: -moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.7));
+            background-image: -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.7));
+            background-image: -ms-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.7));
+        }
+
+        .top-section-bar UL {
+            display: table;
+            width: 100%;
+        }
+
+        .top-section-bar LI {
+            display: table-cell;
+            width: 34%;
+            font-size: 16px;
+            font-weight: 700;
+            position: relative;
+        }
+
+        .top-section-bar LI:first-child {
+            width: 32%;
+            text-align: left;
+        }
+
+        .top-section-bar LI:last-child {
+            width: 34%;
+            text-align: right;
+        }
+
+        .top-section-bar LI:after {
+            content: '';
+            position: absolute;
+            top: -6px;
+            right: 0;
+            display: block;
+            width: 4px;
+            height: 35px;
+            background: #b55857;
+        }
+
+        .top-section-bar LI:last-child:after {
+            display: none;
+        }
+
+        .top__section-link {
+            color: #fff;
+            text-decoration: none;
+        }
+        .top__section-link:focus {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .section1 {
+            padding: 77px 0 86px 0;
+            background: #fff url({{ asset('/images/thumbnails/') }}{{ image3 }}) no-repeat 50% 0;
+            background-size: cover;
+        }
+
+        .section1 .title {
+            margin-bottom: 29px;
+        }
+
+        .section1 .description {
+            max-width: 520px;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 26px;
+            margin-bottom: 17px;
+        }
+
+        .section1 .description1:after {
+            content: '';
+            display: block;
+            width: 100%;
+            max-width: 502px;
+            height: 15px;
+            background: url({{ asset('/images/thumbnails/') }}{{ image2 }}) no-repeat 50% 0;
+            margin: 33px 0 0 0;
+        }
+
+        .section1 .pdf {
+            display: inline-block;
+            padding: 10px 99px 10px 26px;
+            border: 1px solid #b55857;
+            background: url({{ asset('/images/thumbnails/') }}{{ image4 }}) no-repeat 100% 50%;
+            font-size: 14px;
+            font-weight: 300;
+            color: #b55857;
+            text-decoration: underline;
+            margin-top: 10px;
+        }
+
+        .section2 {
+            padding: 90px 0 0 0;
+            background: #27292b url({{ asset('/images/thumbnails/') }}{{ image5 }}) no-repeat 50% 100%;
+            background-size: cover;
+            color: #fff;
+        }
+
+        .section2 .title {
+            margin-bottom: 29px;
+        }
+
+        .section2 .description {
+            max-width: 620px;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 26px;
+            margin-bottom: 78px;
+        }
+
+        .section2 .description:after {
+            content: '';
+            display: block;
+            width: 100%;
+            max-width: 502px;
+            height: 15px;
+            background: url({{ asset('/images/thumbnails/') }}{{ image2 }}) no-repeat 50% 0;
+            opacity: 0.11;
+            margin: 44px 0 0 0;
+        }
+
+        .section2 .point {
+            padding: 0 0 82px 69px;
+            position: relative;
+        }
+
+        .section2 .point2 {
+            margin-left: -20px;
+        }
+
+        .section2 .point .number {
+            position: absolute;
+            left: -8px;
+            top: -44px;
+            display: block;
+            font: 300 160px 'Cormorant', serif;
+            color: rgba(255,255,255,0.1);
+            line-height: 50px;
+        }
+
+        .section2 .point .point-title {
+            max-width: 480px;
+            font: 700 32px 'Cormorant', serif;
+            line-height: 40px;
+            margin-bottom: 21px;
+        }
+
+        .section2 .point P {
+            max-width: 450px;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 26px;
+            margin: 0;
+        }
+
+        .section2 .point .list-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .section2 .point LI {
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 26px;
+            position: relative;
+        }
+
+        .section2 .point LI:before {
+            content: '';
+            position: absolute;
+            left: -12px;
+            top: 13px;
+            display: block;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: #b78b5c;
+        }
+
+        .section3 {
+            padding: 95px 0 42px 0;
+            background: #fff;
+            text-align: center;
+        }
+
+        .section3 .subtitle {
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 3.2px;
+            color: #b78b5c;
+            text-transform: uppercase;
+            margin-bottom: 3px;
+        }
+
+        .section3-title {
+            font: 500 45px 'Cormorant', serif;
+            margin-bottom: 43px;
+        }
+
+        .section3-title:after {
+            content: '';
+            display: block;
+            width: 100%;
+            max-width: 502px;
+            height: 15px;
+            background: url({{ asset('/images/thumbnails/') }}{{ image2 }}) no-repeat 50% 0;
+            margin: 30px auto 0 auto;
+        }
+
+        .section3 .box {
+            display: inline-block;
+            margin: 0 15px 35px 15px;
+        }
+
+        .section3 .box-inner {
+            display: table-cell;
+            width: 392px;
+            height: 203px;
+            padding: 0 10px;
+            border: 1px solid #e4e4e4;
+            vertical-align: middle;
+            position: relative;
+        }
+
+        .section3 .box-inner:after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -9px;
+            margin-left: -9px;
+            display: block;
+            width: 17px;
+            height: 17px;
+            background: url({{ asset('/images/thumbnails/') }}{{ image6 }}) no-repeat 50% 0;
+        }
+
+        .section3 .box-title {
+            font: 700 25px 'Cormorant', serif;
+            margin-bottom: 3px;
+        }
+
+        .section3 .box-title:after {
+            content: '';
+            display: block;
+            width: 6px;
+            height: 4px;
+            background: #b55857;
+            margin: 8px auto 0 auto;
+        }
+
+        .section3 .box P {
+            padding: 0 60px;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 26px;
+            margin: 0;
+        }
+
+        .section4 {
+            padding: 78px 0 42px 0;
+            background: #f5f5f5 url({{ asset('/images/thumbnails/') }}{{ image7 }}) no-repeat 50% 0;
+        }
+
+        .section4 .title {
+            margin-bottom: 48px;
+        }
+
+        .section4 .point {
+            max-width: 290px;
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 28px;
+            position: relative;
+            margin-bottom: 39px;
+        }
+
+        .section4 .point:before {
+            content: '';
+            position: absolute;
+            left: -45px;
+            top: 50%;
+            margin-top: -12px;
+            display: block;
+            width: 24px;
+            height: 24px;
+            background: url({{ asset('/images/thumbnails/') }}{{ image8 }}) no-repeat 0 0;
+        }
+
+        .section5 {
+            padding: 80px 0 50px 0;
+            background: #27292b url({{ asset('/images/thumbnails/') }}{{ image9 }}) no-repeat 50% 0;
+            color: #fff;
+        }
+
+        .section5 .title {
+            margin-bottom: 29px;
+        }
+
+        .section5 .description {
+            max-width: 520px;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 26px;
+            margin-bottom: 47px;
+        }
+
+        .section5 .description:after {
+            content: '';
+            display: block;
+            width: 100%;
+            max-width: 502px;
+            height: 15px;
+            background: url({{ asset('/images/thumbnails/') }}{{ image2 }}) no-repeat 50% 0;
+            opacity: 0.11;
+            margin: 32px 0 0 0;
+        }
+
+        .section5 .owl-carousel {
+            position: relative;
+        }
+        .section5 .owl-carousel .owl-stage-outer {
+            margin-bottom: -120px;
+        }
+
+        .section5 .owl-carousel .owl-item IMG {
+            display: inline-block;
+            width: auto;
+            margin-bottom: -78px;
+        }
+
+        .owl-nav {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            margin-top: -36px;
+        }
+
+        .owl-prev,
+        .owl-next {
+            position: absolute;
+            display: block;
+            width: 36px;
+            height: 72px;
+            background: url({{ asset('/images/thumbnails/') }}{{ image8 }}) no-repeat;
+            text-indent: -10000px;
+        }
+
+        .owl-prev {
+            background-position: 0 -35px;
+            left: -98px;
+        }
+
+        .owl-next {
+            background-position: 0 -110px;
+            right: -98px;
+        }
+
+        .section5 .slide .photo IMG {
+            width: 100%;
+            max-width: 488px;
+        }
+
+        .opinion-box {
+            position: relative;
+            margin: 61px 0 88px 36px;
+        }
+        .opinion-box .slide-wrap {
+            max-height: 350px;
+            overflow: hidden;
+            transition: .3s;
+        }
+        .opinion-box .slide-wrap.open {
+            max-height: 999em;
+        }
+
+        .opinion-box .name {
+            font: 700 32px 'Cormorant', serif;
+            margin-bottom: 20px;
+        }
+
+        .opinion {
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 26px;
+            margin-bottom: 28px;
+        }
+
+        .opinion-box STRONG {
+            display: block;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
+
+        .slide .slide-toggle {
+            position: absolute;
+            top: 100%;
+            color: #b55857;
+            text-decoration: underline;
+        }
+        .slide-wrap.open .slide-toggle {
+            display: none;
+        }
+
+        .section6 {
+            padding: 135px 0 11px 0;
+            background: #fff url({{ asset('/images/thumbnails/') }}{{ image10 }}) no-repeat 50% 104px;
+        }
+
+        .section6 .title {
+            margin-bottom: 29px;
+        }
+
+        .section6 .description {
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 26px;
+            margin-bottom: 80px;
+        }
+
+        .section6 .description:after {
+            content: '';
+            display: block;
+            width: 100%;
+            max-width: 502px;
+            height: 15px;
+            background: url({{ asset('/images/thumbnails/') }}{{ image2 }}) no-repeat 50% 0;
+            margin: 46px 0 0 0;
+        }
+
+        .point-list {
+            display: table;
+            width: 100%;
+        }
+
+        .point-list LI {
+            display: table-cell;
+            width: 36%;
+            padding: 0 65px 60px 65px;
+            position: relative;
+        }
+
+        .point-list LI:first-child {
+            width: 40%;
+        }
+
+        .point-list LI:last-child {
+            width: 24%;
+            padding-right: 0;
+        }
+
+        .point-list LI:after {
+            content: '';
+            position: absolute;
+            top: 37px;
+            right: 48px;
+            display: block;
+            width: 22px;
+            height: 5px;
+            background: url({{ asset('/images/thumbnails/') }}{{ image8 }}) no-repeat 0 -27px;
+        }
+
+        .point-list LI:last-child:after {
+            display: none;
+        }
+
+        .point-list .number {
+            position: absolute;
+            left: -19px;
+            top: 10px;
+            width: 60px;
+            height: 60px;
+            border: 1px solid #d5bb9f;
+            transform: rotate(45deg);
+        }
+
+        .point-list .number SPAN {
+            display: block;
+            width: 60px;
+            height: 60px;
+            transform: rotate(-45deg);
+            text-align: center;
+            font-size: 34px;
+            font-weight: 100;
+            color: #b78b5c;
+            line-height: 60px;
+        }
+
+        .point-list P {
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 26px;
+        }
+
+        .video-link {
+            display: inline-block;
+            padding: 0 40px 0 6px;
+            border: 1px solid #b55857;
+            background: url({{ asset('/images/thumbnails/') }}{{ image11 }}) no-repeat 100% 50%;
+            font-size: 14px;
+            font-weight: 500;
+            color: #b55857;
+            line-height: 25px;
+            margin-top: 7px;
+        }
+
+        .section7 {
+            padding: 78px 0 92px 0;
+            background: #f5f5f5;
+        }
+
+        .section7 .title {
+            margin-bottom: 49px;
+        }
+
+        .contacts {
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 28px;
+        }
+
+        .contacts2 {
+            position: relative;
+            padding-left: 130px;
+            margin-left: -10px;
+        }
+
+        .contacts2 .photo {
+            position: absolute;
+            left: 0;
+            top: -5px;
+            display: block;
+            width: 101px;
+            height: 101px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .section8 {
+            padding: 51px 0 162px 0;
+            background: #242527 url({{ asset('/images/thumbnails/') }}{{ image12 }}) no-repeat 50% 0;
+            background-size: cover;
+            color: #fff;
+            text-align: center;
+        }
+
+        .section8 .extratitle {
+            font-size: 16px;
+            font-weight: 900;
+            color: #b78b5c;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .section8 H2 {
+            font: 700 89px 'Cormorant', serif;
+            letter-spacing: -1px;
+            line-height: 71px;
+            margin: 0 0 5px 0;
+            text-transform: none;
+        }
+
+        .section8 H2:after {
+            content: '';
+            display: block;
+            width: 100%;
+            max-width: 502px;
+            height: 15px;
+            background: url({{ asset('/images/thumbnails/') }}{{ image2 }}) no-repeat 50% 0;
+            opacity: 0.4;
+            margin: 26px auto 0 auto;
+        }
+
+        .section8 .subtitle {
+            max-width: 500px;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 26px;
+            margin: 0 auto 206px auto;
+        }
+
+
+        /* Popup & Form */
+
+        .popup-reg {
+            background: #b78b5c;
+            width: 100vw;
+        }
+        .form__reg {
+            max-width: 1150px;
+            margin: 0 auto;
+        }
+
+        .form__title {
+            color: #fff;
+            font-family: 'Cormorant';
+            font-style: normal;
+            font-weight: bold;
+            font-size: 60px;
+            line-height: 73px;
+            text-transform: initial;
+            align-self: flex-start;
+        }
+
+        .form__items {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .form__item {
+            margin-right: 1vw;
+        }
+        .form__item:last-child {
+            margin-right: 0;
+        }
+        .form__input {
+            border-radius: 50px;
+            border: none;
+            padding: 20px 2vw;
+        }
+
+        .form__more {
+            align-self: flex-start;
+        }
+
+        .form__footer {
+            display: flex;
+            align-items: center;
+        }
+
+        .form__footer-checkbox {
+            margin-right: 5px;
+        }
+        .form__more-link {
+            color: #fff;
+        }
+        .form__more-link:hover {
+            color: lightseagreen;
+        }
+        .form__button {
+            max-width: 250px;
+            height: 60px;
+            background: #000000;
+            border-radius: 50px;
+            padding: 0 4.5vw;
+        }
+        .form__button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .form__footer-text {
+            font-family: 'MuseoSansCyrl';
+            font-size: 11px;
+            line-height: 12px;
+            color: #FFFFFF;
+            font-weight: 300;
+            letter-spacing: 0.4px;
+        }
+
+        /* Responsive */
+
+        @media (min-width: 1200px) {
+
+            .container {
+                width: 980px;
+            }
+        }
+        @media (max-width: 992px) {
+
+            .top-section {
+                padding-top: 41px;
+            }
+
+            H1 {
+                font-size: 70px;
+                line-height: 61px;
+            }
+
+            .top-section .subtitle {
+                text-shadow: 0 0 10px rgba(0,0,0,1);
+                margin: 0 auto 90px auto;
+            }
+
+            .top-section-bar LI {
+                display: block;
+                width: 100% !important;
+                padding-bottom: 10px;
+                text-align: center !important;
+            }
+
+            .top-section-bar LI:after {
+                display: none;
+            }
+
+            .section2 .point2 {
+                margin-left: 0;
+            }
+
+            .section4 .point {
+                max-width: none;
+            }
+
+            .section5 .owl-carousel .owl-stage-outer {
+                margin-bottom: 0;
+            }
+
+            .owl-prev {
+                left: 0;
+            }
+
+            .owl-next {
+                right: 0;
+            }
+
+            .opinion-box {
+                padding: 61px 0 0px 0;
+            }
+
+            .point-list LI {
+                display: block;
+                width: 100% !important;
+                padding: 0 0 60px 96px;
+            }
+
+            .point-list LI:after {
+                display: none;
+            }
+
+            .point-list .number {
+                left: 12px;
+                top: -15px;
+            }
+
+            .section7 {
+                padding: 78px 0 42px 0;
+            }
+
+            .contacts {
+                margin-bottom: 40px;
+            }
+
+            .contacts2 {
+                padding-left: 0;
+                margin-left: 0;
+            }
+
+            .contacts2 .photo {
+                position: static;
+                left: 0;
+                top: 0;
+                margin-bottom: 10px;
+            }
+
+            .section8 H2 {
+                font-size: 70px;
+                line-height: 61px;
+            }
+
+            .popup-reg {
+                width: auto;
+            }
+            .form__reg {
+                max-width: 350px;
+            }
+
+            .form__title {
+                font-size: 40px;
+                line-height: 1.2;
+            }
+
+            .form__items {
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 0;
+            }
+            .form__item {
+                margin-right: 0;
+                margin-bottom: 30px;
+            }
+            .form__item:last-child {
+                margin-right: 0;
+            }
+            .form__input {
+                width: 350px;
+                padding: 20px 25px;
+            }
+            .form__button {
+                max-width: 350px;
+                padding: 0 133px;
+            }
+
+            .form__footer-checkbox {
+                align-self: flex-start;
+            }
+            .form__footer-checkbox input {
+                margin: 0;
+            }
+            .form__footer-text {
+                font-size: 9px;
+            }
+
+        }
+        @media (max-width: 768px) {
+
+            .header .logo,
+            .header .phone {
+                float: none;
+            }
+
+            .landformbox {
+                float: none;
+                max-width: 300px;
+            }
+
+            .landformbox .form {
+                width: 100%;
+            }
+
+            .landformbox .form > P {
+                float: none;
+                width: 100%;
+                padding-right: 0;
+            }
+
+            .landformbox .form .input {
+                max-width: 300px;
+            }
+
+            .landformbox .form .submit {
+                width: 100%;
+                text-align: center;
+            }
+
+            .section2 {
+                padding: 90px 0 78px 0;
+            }
+
+            .section2 .description {
+                margin-bottom: 0;
+            }
+
+            .section2 .point {
+                padding: 0;
+            }
+
+            .section2 .point .number {
+                position: static;
+                left: 0;
+                top: 0;
+                font-size: 140px;
+                line-height: 140px;
+            }
+
+            .section3 .box {
+                display: block;
+                max-width: 392px;
+                margin: 0 auto 35px auto;
+            }
+
+            .section3 .box-inner {
+                display: block;
+                width: 100%;
+                max-width: 392px;
+                height: auto;
+                padding: 10px 10px 20px 10px;
+            }
+
+            .section3 .box P {
+                padding: 0;
+            }
+
+            .section4 .point {
+                padding-left: 45px;
+            }
+
+            .section4 .point:before {
+                left: 0;
+            }
+
+            .point-list LI {
+                padding: 0 0 40px 66px;
+            }
+
+            .point-list .number {
+                left: 10px;
+                top: -10px;
+                width: 40px;
+                height: 40px;
+            }
+
+            .point-list .number SPAN {
+                width: 40px;
+                height: 40px;
+                font-size: 24px;
+                line-height: 40px;
+            }
+
+            VIDEO {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+
+
+        .footer {
+            padding: 25px 0;
+            background: #27292b;
+            font-size: 12px;
+            color: #fff;
+        }
+        .footer a {
+            color: #fff;
+        }
+
+
+        @media (max-width: 575px) {
+            .form__reg {
+                max-width: 290px;
+            }
+            .form__input {
+                width: 290px;
+            }
+            .form__button {
+                max-width: 290px;
+                padding: 0 103px;
+            }
+            .form__title {
+                font-size: 36px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .footer__right {
+                text-align: right;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-56965FL" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="wrapper">
+    <header class="header clearfix">
+        <div class="container flex-cont">
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <div class="phone">
+                <div class="phone-number"><a href="tel:79609281079">8 (960) 928 10 79</a></div>
+            </div>
+        </div>
+    </header>
+
+    <section class="top-section">
+        <div class="container">
+            <div class="top-section__bg"></div>
+            <div class="extratitle">Профессиональная элита страны</div>
+            <h1>Кадровый резерв</h1>
+            <div class="subtitle">Образовательная программа для амбициозных выпускников региональных школ и&nbsp;колледжей</div>
+        </div>
+        <div class="top-section-bar">
+            <div class="container">
+                <ul>
+                    <li><a href="#popup-reg" class="top__section-link" data-fancybox>Бакалавриат и&nbsp;магистратура</a></li>
+                    <li><a href="#popup-reg" class="top__section-link" data-fancybox>Обучение в&nbsp;Москве</a></li>
+                    <li><a href="#popup-reg" class="top__section-link" data-fancybox>Трудоустройство с&nbsp;1-го курса</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section1">
+        <div class="container">
+            <div class="title">Что такое &laquo;Кадровый резерв&raquo;?</div>
+            <div class="description description1">Это специализированная программа высшего образования, нацеленная на&nbsp;отбор и&nbsp;подготовку высококвалифицированных кадров для замещения должностей в&nbsp;крупных бизнес-структурах и&nbsp;государственном аппарате России.</div>
+            <div class="title">Только лучшие выпускники в&nbsp;масштабах страны и&nbsp;за&nbsp;ее&nbsp;пределами</div>
+            <div class="description description1">Ежегодно более 300 выпускников получают возможность обучаться и&nbsp;продолжить свое развитие в&nbsp;Москве.</div>
+            <div class="title">Обучение на одном из трёх факультетов:</div>
+            <div class="description">Факультет менеджмента, Факультет графического дизайна, Факультет информационных систем и технологий</div>
+        </div>
+    </section>
+
+
+    <section class="section2">
+        <div class="container">
+            <div class="title">Идеальные условия для развития</div>
+            <div class="description">Для наших студентов мы&nbsp;создали комплексную практико-ориентированную программу обучения для достижения действительно впечатляющих результатов</div>
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="point">
+                        <div class="number">1</div>
+                        <div class="point-title">Практико-ориентированность</div>
+                        <ul>
+                        <li>Трудоустройство с&nbsp;1-го курса для всех студентов программы</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="point point2">
+                        <div class="number">2</div>
+                        <div class="point-title">Фундаментальные знания</div>
+                        <ul>
+                        <li>Получение высшего образования в&nbsp;крупнейшем ВУЗе страны</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="point">
+                        <div class="number">3</div>
+                        <div class="point-title">Самостоятельность</div>
+                        <ul>
+                            <li>Престижная должность</li>
+                            <li>Зарплата</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="point point2">
+                        <div class="number">4</div>
+                        <div class="point-title">Два высших образования</div>
+                        <ul>
+                        <li>Возможность получения двух высших образований</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="form-section">
+        <div class="container">
+            <div class="landformbox">
+                <div class="landformbox-inner">
+                    <form action="https://synergy.ru/lander/alm/lander.php?r=land/index&unit=synergy&land=synergyleadership.ru&type=&version=&partner=&graccount=synergy&grcampaign=&form=middle" method="post" class="form">
+                        <div class="formtitle">Отправь заявку сейчас</div>
+                        <p><input type="text" name="name" placeholder="Введите ваше имя" class="input" required></p>
+                        <p><input type="email" name="email" placeholder="Введите ваш e-mail" class="input" required></p>
+                        <p><input type="tel" name="phone" placeholder="Введите ваш телефон" class="input" required></p>
+                        <p class="submit"><input type="submit" value="Отправить" class="button"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section3">
+        <div class="container">
+            <div class="subtitle">Работа на&nbsp;результат без отвлечения на&nbsp;праздность</div>
+            <div class="section3-title">&laquo;Не&nbsp;будет дисциплины &mdash; не&nbsp;будет результата&raquo;</div>
+            <div class="box">
+                <div class="box-inner">
+                    <div class="box-title">7&nbsp;дней в&nbsp;неделю</div>
+                    <p>Корпоративный <br>стиль одежды</p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-inner">
+                    <div class="box-title">Проживание в&nbsp;общежитии</div>
+                    <p>Для всех студентов с&nbsp;1-го по&nbsp;3-й курс</p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-inner">
+                    <div class="box-title">Спорт</div>
+                    <p>Возможность держать свое тело в&nbsp;тонусе</p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-inner">
+                    <div class="box-title">Здоровый образ жизни</div>
+                    <p>На&nbsp;протяжении всего периода обучения студенты должны вести здоровый образ жизни</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section4">
+        <div class="container">
+            <div class="title">Что в&nbsp;результате?</div>
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="point">Государственный диплом</div>
+                </div>
+                <div class="col-md-5">
+                    <div class="point">Рекомендации и&nbsp;деловые связи</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="point">Дипломная работа в&nbsp;виде защиты собственного бизнес-плана</div>
+                </div>
+                <div class="col-md-5">
+                    <div class="point">Опыт работы по&nbsp;специальности 4&ndash;6&nbsp;лет</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section5">
+        <div class="container">
+            <div class="title">Наши выпускники</div>
+            <div class="description">Профессиональная элита международного уровня. В&nbsp;их&nbsp;арсенале все необходимые знания и&nbsp;навыки для стремительного карьерного роста</div>
+            <div class="owl-carousel" data-owl-options="{items: 1, slideBy: 1, dots: false,}">
+                <div class="slide">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="photo"><img src="{{ asset('/images/thumbnails/') }}{{ image14 }}" alt="Plokhih" /></div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="opinion-box">
+                                <div class="slide-wrap">
+                                    <div class="name">Кирилл Плохих</div>
+                                    <div class="opinion">Хочешь получать образование, работать, получать опыт и&nbsp;строить карьеру&nbsp;&mdash; хорошо. Главное, чтобы тебя не&nbsp;обманули. Сейчас говорят одно, а&nbsp;приедешь в&nbsp;Москву&nbsp;&mdash; все будет по-другому&quot;,&nbsp;&mdash; говорили мои родители в&nbsp;2009&nbsp;году, когда я&nbsp;из&nbsp;Омска поехал поступать в&nbsp;Москву</div>
+                                    <strong>Сейчас</strong>
+                                    <div class="opinion">
+                                        <ul>
+                                            <li>Родители живут в&nbsp;Москве, брат учится в&nbsp;московской школе.</li>
+                                            <li>Я прошел 5&nbsp;кругов карьеры: от&nbsp;позиции специалиста по&nbsp;продажам до&nbsp;директора образовательной программы.</li>
+                                            <li>Благодаря программе я встретил свою любимую жену!</li>
+                                            <li>Я прошел более 40&nbsp;тренингов и&nbsp;курсов, за&nbsp;которые платил работодатель.</li>
+                                            <li>Я руководил группами и&nbsp;отделами от&nbsp;7&nbsp;до&nbsp;50&nbsp;человек.</li>
+                                            <li>90% моих сверстников&nbsp;&mdash; работают консультантами в&nbsp;известных FMCG сетях, наверное, я&nbsp;бы тоже работал, но&nbsp;вмешался &laquo;Кадровый резерв&raquo; Университета &laquo;Синергия&raquo;, и&nbsp;я ни&nbsp;разу не&nbsp;пожалел!</li>
+                                        </ul>
+                                    </div>
+                                    <a href="#" class="slide-toggle">читать далее</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="photo"><img src="{{ asset('/images/thumbnails/') }}{{ image13 }}" alt="Greta" /></div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="opinion-box">
+                                <div class="slide-wrap">
+                                    <div class="name">Грета Джанбарянц</div>
+                                    <div class="opinion">
+                                        <p>Программа &laquo;Кадровый резерв&raquo;&nbsp;&mdash; это прекрасная возможность прыгнуть прямиком со&nbsp;школьной скамьи во&nbsp;взрослую, серьезную жизнь. Я, как и&nbsp;мои однокурсники, этот прыжок совершила не&nbsp;задумываясь ни&nbsp;на&nbsp;минуту. С&nbsp;тех пор я нахожусь в&nbsp;непрерывном развитии, от&nbsp;чего ежедневно получаю огромную порцию адреналина и&nbsp;положительных эмоций. За&nbsp;8&nbsp;лет моего профессионального роста менялось очень многое: должность, род занятий, сфера деятельности, команда коллег и&nbsp;даже социальный статус. Одно остается неизменным&nbsp;&mdash; подход к&nbsp;жизни. Каждый новый день&nbsp;&mdash; это возможность проявить и&nbsp;изменить себя.</p>
+                                    </div>
+                                    <a href="#" class="slide-toggle">читать далее</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="photo"><img src="{{ asset('/images/thumbnails/') }}{{ image15 }}" alt="Zaycev" /></div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="opinion-box">
+                                <div class="slide-wrap">
+                                    <div class="name">Дмитрий Зайцев</div>
+                                    <div class="opinion">
+                                        <p>После школы я не&nbsp;планировал связывать дальнейшее образование с&nbsp;московским вузом. Но&nbsp;все изменилось, когда в&nbsp;2010&nbsp;году проводился первый этап отбора на&nbsp;программу &laquo;Кадровый резерв&raquo; в&nbsp;Сызрани. Я считал себя активным и&nbsp;работоспособным молодым человеком, и&nbsp;решил, что эта программа отлично подойдёт для&nbsp;моего развития.</p>
+                                        <p>Свой профессиональный рост я начал с&nbsp;отдела продаж. Это был потрясающий для&nbsp;меня опыт, ведь продажи&nbsp;&mdash; это основа менеджмента. Если вы&nbsp;не&nbsp;овладеете в&nbsp;совершенстве инструментами продаж, вам будет крайне тяжело стать эффективным руководителем, за&nbsp;которым сейчас так активно охотятся работодатели на&nbsp;рынке труда. Следующей ступенью в&nbsp;моей карьерной лестнице стала дирекция программы &laquo;Кадровый резерв&raquo;. В&nbsp;2014&nbsp;году я окончил бакалавриат с&nbsp;отличием. В&nbsp;2015&nbsp;году руководил несколькими проектами в&nbsp;университете. В&nbsp;2016&nbsp;году окончил магистратуру, на&nbsp;данный момент являюсь студентом аспирантуры. С&nbsp;начала 2016&nbsp;года занимаю должность директора программы &laquo;Менеджмент в&nbsp;гостиничном и&nbsp;ресторанном бизнесе&raquo; Университета &laquo;Синергия&raquo;.</p>
+                                        <p>Если вы хотите связать свою жизнь с&nbsp;менеджментом и&nbsp;семимильными шагами развиваться в&nbsp;сфере управления, то лучшего варианта, чем программа &laquo;Кадровый резерв&raquo;, вам не&nbsp;найти.</p>
+                                    </div>
+                                    <a href="#" class="slide-toggle">читать далее</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="photo"><img src="{{ asset('/images/thumbnails/') }}{{ image16 }}" alt="Shaldina" /></div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="opinion-box">
+                                <div class="slide-wrap">
+                                    <div class="name">Елизавета Шалдина</div>
+                                    <div class="opinion">
+                                        <p>&laquo;Кадровый резерв&raquo;&nbsp;&mdash; для&nbsp;меня это не&nbsp;просто красивое и&nbsp;звучное название. &laquo;Кадровый резерв&raquo;&nbsp;&mdash; это программа, которая дает тебе массу возможностей, а&nbsp;сможешь&nbsp;ли ты воплотить их в&nbsp;жизнь&nbsp;&mdash; зависит уже от&nbsp;тебя.</p>
+                                        <p>Поступление в&nbsp;Университет &laquo;Синергия&raquo; дает уникальную возможность&nbsp;&mdash; четкое понимание того, кем я могу стать, и&nbsp;чем буду заниматься. За&nbsp;4&nbsp;года обучения и&nbsp;работы я побывала в&nbsp;роли оператора <span style="white-space:nowrap;">call-центра,</span> менеджера по&nbsp;продажам, старшего менеджера, руководителя группы по&nbsp;продажам и&nbsp;руководителя отдела продаж. Когда тебя окружают предприимчивые и&nbsp;активные люди&mdash; профессиональное становление проходит намного быстрее. Для&nbsp;меня программа &laquo;Кадровый резерв&raquo; Университета &laquo;Синергия&raquo;&nbsp;&mdash; это синоним &laquo;быстрого карьерного роста&raquo;.</p>
+                                    </div>
+                                    <a href="#" class="slide-toggle">читать далее</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="photo"><img src="{{ asset('/images/thumbnails/') }}{{ image17 }}" alt="Skorobogatov" /></div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="opinion-box">
+                                <div class="slide-wrap">
+                                    <div class="name">Сергей Скоробогатов</div>
+                                    <div class="opinion">
+                                        <p>&laquo;Синергия&raquo; известна как вуз для&nbsp;будущих предпринимателей и&nbsp;руководителей высшего звена. Но&nbsp;я могу сказать, что это Университет, который ломает привычный стереотип мышления и&nbsp;учит думать <span style="white-space:nowrap;">по-новому.</span></p>
+                                    </div>
+                                    <div class="opinion">
+                                        <p>Зачастую, чтобы открыть свое дело или&nbsp;добиться успеха, выпускникам вузов приходиться тратить на&nbsp;это многие годы. Сначала получить образование, потом поработать, наделать кучу ошибок, и&nbsp;только тогда <span style="white-space:nowrap;">что-то</span> получится. И&nbsp;то не&nbsp;всегда.</p>
+                                        <p>Я сразу ставил себе цель обеспечить не&nbsp;только себя, но&nbsp;и&nbsp;свою семью, не&nbsp;затрачивая на&nbsp;это бесконечные годы обучения.</p>
+                                        <p>Университет &laquo;Синергия&raquo; и&nbsp;программа &laquo;Кадровый резерв&raquo; дали мне возможность развиваться как профессионально, так и&nbsp;личностно. Здесь я смог совместить обучение и&nbsp;работу, и, начав с&nbsp;менеджера,&mdash; сейчас я занимаю должность Директора Департамента продаж. И&nbsp;за&nbsp;такой короткий срок я научился многому: вести переговоры, выступать перед публикой, руководить командой, быть не&nbsp;только руководителем, но&nbsp;и&nbsp;другом, наставником.</p>
+                                        <p>Университет обладает всей необходимой базой для&nbsp;построения успешной карьеры:&nbsp;&mdash; классные эксперты, тренинги и&nbsp;семинары международного уровня, опытные, а&nbsp;главное&nbsp;&mdash; практико&nbsp;&mdash; ориентированные преподаватели.</p>
+                                        <p>Если ты активный, предприимчивый и&nbsp;ставишь высокие цели,&mdash; то &laquo;Кадровый Резерв &raquo;для&nbsp;тебя!</p>
+                                    </div>
+                                    <a href="#" class="slide-toggle">читать далее</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section6">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7"></div>
+                <div class="col-md-5">
+                    <div class="title">Как стать студентом?</div>
+                    <div class="description">Помимо ЕГЭ мы&nbsp;используем 3&ndash;ступенчатую систему отбора, что позволяет нам применять индивидуальный подход к&nbsp;каждому кандидату.</div>
+                </div>
+            </div>
+            <ul class="point-list">
+                <li>
+                    <div class="number"><span>1</span></div>
+                    <p>Оставить заявку и&nbsp;пройти консультацию с&nbsp;региональным представителем</p>
+                </li>
+                <li>
+                    <div class="number"><span>2</span></div>
+                    <p>Пройти обеседование с&nbsp;московской комиссией через скайп</p>
+                </li>
+                <li>
+                    <div class="number"><span>3</span></div>
+                    <p>Пройти испытание &laquo;Школы лидерства&raquo;</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="form-section">
+        <div class="container">
+            <div class="landformbox">
+                <div class="landformbox-inner">
+                    <form action="https://synergy.ru/lander/alm/lander.php?r=land/index&unit=synergy&land=synergyleadership.ru&type=&version=&partner=&graccount=synergy&grcampaign=&form=bottom" method="post" class="form">
+                        <div class="formtitle">Отправь заявку сейчас</div>
+                        <p><input type="text" name="name" placeholder="Введите ваше имя" class="input" required></p>
+                        <p><input type="email" name="email" placeholder="Введите ваш e-mail" class="input" required></p>
+                        <p><input type="tel" name="phone" placeholder="Введите ваш телефон" class="input" required></p>
+                        <p class="submit"><input type="submit" value="Отправить" class="button"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="section8">
+        <div class="container">
+            <div class="extratitle">Профессиональная элита страны</div>
+            <h2>Кадровый резерв</h2>
+            <div class="subtitle">Образовательная программа для амбициозных выпускников региональных школ и&nbsp;колледжей</div>
+        </div>
+    </section>
+
+    <section class="section7">
+        <div class="container">
+            <div class="title">Контакты</div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="contacts">
+                        Казаку Роман Сергеевич<br>
+                        Куратор программы &laquo;Кадровый резерв&raquo;<br>
+                        <a href="tel:+79136181518">8 (960) 928 10 79</a> <br> <a href="mailto:RKazaku@synergy.ru">RKazaku@synergy.ru</a> <br> Метро Сокол <br> Ленинградский проспект, 80Г.<br> 						</div>
+                </div>
+                <div class="col-md-6">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                </div>
+                <div class="col-md-6">
+
+                </div>
             </div>
         </div>
     </div>
-{% endblock %}
+
+</div>
+
+<div class="hidden">
+    <div class="popup popup-reg" id="popup-reg">
+        <form action="https://synergy.ru/lander/alm/lander.php?r=land/index&unit=synergy&land=synergyleadership.ru&type=&version=&partner=&graccount=synergy&grcampaign=&form=popup" method="post" class="form form__reg">
+            <div class="form__wrapper">
+                <h3 class="form__title ">Заполните заявку на поступление</h3>
+                <div class="form__items">
+                    <div class="form__item form__item_text ">
+                        <input name="name" type="text" placeholder="Ваше имя" class="form__input" required value="">
+                    </div><!-- form__item -->
+                    <div class="form__item form__item_text ">
+                        <input name="phone" type="text" placeholder="Телефон" class="form__input" required value="">
+                    </div><!-- form__item -->
+                    <div class="form__item form__item_email ">
+                        <input name="email" type="email" placeholder="Эл.почта" class="form__input" required value="">
+                    </div><!-- form__item -->
+                    <div class="form__item form__item_button"><button class="form__button button button_1" type="submit">Отправить</button></div>
+                </div><!-- form__items -->
+                <div class="form__more">
+                    <label class="form__footer ">
+                        <div class="form__footer-checkbox"><input type="checkbox" name="personalDataAgree" checked>
+                            <div class="form__footer-checkbox-icon lazy"></div>
+                        </div>
+                        <div class="form__footer-text">Я&nbsp;даю согласие на&nbsp;обработку персональных данных, согласен на&nbsp;получение информационных рассылок и&nbsp;соглашаюсь с&nbsp;<a href="#privacy" class="fancybox form__more-link" data-fancybox>политикой конфиденциальности.</a></div>
+                    </label>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+</div><!-- hidden -->
+
+
+
+<!-- Скрипт ALM Lander -->
+<script src="https://syn.su/js/lander.js"></script>
+
+<!-- Плагины и хелперы -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.0/owl.carousel.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" defer></script>
+<script src="{{ asset('js/common-0d486eaa04.js') }}"></script>
+
+
+</body>
+
+</html>
