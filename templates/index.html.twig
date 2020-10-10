@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Google Tag Manager -->
     <script>
-        (function(w, d, s, l, i) {
+        (function (w, d, s, l, i) {
             w[l] = w[l] || [];
             w[l].push({
                 'gtm.start': new Date().getTime(),
@@ -30,20 +30,23 @@
     <meta property="og:description" content="">
 
 
-
     <link href="http://synergy.ru/img/favicon.ico" type="image/x-icon" rel="icon">
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.0/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
-{#    In this template images download to css, i cannot upload image from db to css that is why i'm not importing the css but write it inside html file#}
-{#    <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">#}
-    <link href="{{asset('assets/css/fonts.css')}}" rel="stylesheet">
+    {#    In this template images download to css, i cannot upload image from db to css that is why i'm not importing the css but write it inside html file#}
+    {#    <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">#}
+    <link href="{{ asset('assets/css/fonts.css') }}" rel="stylesheet">
 
-    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script><![endif]-->
-    <!--[if lte IE 9]><script src="http://phpbbex.com/oldies/oldies.js" charset="utf-8"></script><![endif]-->
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+    <!--[if lte IE 9]>
+    <script src="http://phpbbex.com/oldies/oldies.js" charset="utf-8"></script><![endif]-->
 
-    <!--[if lt IE 9]><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script><![endif]-->
+    <!--[if lt IE 9]>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script><![endif]-->
     <!--[if gte IE 9]><!-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <!--<![endif]-->
@@ -240,11 +243,12 @@
             margin-left: auto;
         }
 
-        @media (max-width:768px){
+        @media (max-width: 768px) {
             .header .logo IMG {
                 max-width: 240px;
                 max-height: 39px;
             }
+
             .header .phone {
                 display: flex;
                 justify-content: space-around;
@@ -255,7 +259,7 @@
             display: none;
         }
 
-        .menu-toggle .bar{
+        .menu-toggle .bar {
             width: 25px;
             height: 2px;
             background: #3f3f3f;
@@ -265,12 +269,13 @@
             transition: all 0.3s ease-in-out;
         }
 
-        @media (max-width:768px) {
+        @media (max-width: 768px) {
             .menu-toggle {
                 display: grid;
                 margin-top: 15px;
                 margin-right: 20px;
             }
+
             .header .phone {
                 position: absolute;
                 align-items: flex-start;
@@ -292,15 +297,15 @@
         }
 
 
-        #mobile-menu.is-active .bar:nth-child(2){
+        #mobile-menu.is-active .bar:nth-child(2) {
             opacity: 0;
         }
 
-        #mobile-menu.is-active .bar:nth-child(1){
+        #mobile-menu.is-active .bar:nth-child(1) {
             transform: translateY(8px) rotate(45deg);
         }
 
-        #mobile-menu.is-active .bar:nth-child(3){
+        #mobile-menu.is-active .bar:nth-child(3) {
             transform: translateY(-8px) rotate(-45deg);
         }
 
@@ -442,13 +447,14 @@
             top: 0;
         }
 
-        @media (max-width:505px){
+        @media (max-width: 505px) {
             .top-section__bg {
                 display: block;
                 height: 300px;
             }
         }
-        @media (max-width:420px){
+
+        @media (max-width: 420px) {
             .top-section__bg {
                 height: 350px;
             }
@@ -498,11 +504,11 @@
 
         .top-section-bar {
             padding: 107px 0 62px 0;
-            background-image: linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.7));
-            background-image: -o-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.7));
-            background-image: -moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.7));
-            background-image: -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.7));
-            background-image: -ms-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.7));
+            background-image: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
+            background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
+            background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
+            background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
+            background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
         }
 
         .top-section-bar UL {
@@ -547,6 +553,7 @@
             color: #fff;
             text-decoration: none;
         }
+
         .top__section-link:focus {
             color: #fff;
             text-decoration: none;
@@ -637,7 +644,7 @@
             top: -44px;
             display: block;
             font: 300 160px 'Cormorant', serif;
-            color: rgba(255,255,255,0.1);
+            color: rgba(255, 255, 255, 0.1);
             line-height: 50px;
         }
 
@@ -822,6 +829,7 @@
         .section5 .owl-carousel {
             position: relative;
         }
+
         .section5 .owl-carousel .owl-stage-outer {
             margin-bottom: -120px;
         }
@@ -869,11 +877,13 @@
             position: relative;
             margin: 61px 0 88px 36px;
         }
+
         .opinion-box .slide-wrap {
             max-height: 350px;
             overflow: hidden;
             transition: .3s;
         }
+
         .opinion-box .slide-wrap.open {
             max-height: 999em;
         }
@@ -903,6 +913,7 @@
             color: #b55857;
             text-decoration: underline;
         }
+
         .slide-wrap.open .slide-toggle {
             display: none;
         }
@@ -1091,6 +1102,7 @@
             background: #b78b5c;
             width: 100vw;
         }
+
         .form__reg {
             max-width: 1150px;
             margin: 0 auto;
@@ -1112,12 +1124,15 @@
             justify-content: space-between;
             margin-bottom: 20px;
         }
+
         .form__item {
             margin-right: 1vw;
         }
+
         .form__item:last-child {
             margin-right: 0;
         }
+
         .form__input {
             border-radius: 50px;
             border: none;
@@ -1136,12 +1151,15 @@
         .form__footer-checkbox {
             margin-right: 5px;
         }
+
         .form__more-link {
             color: #fff;
         }
+
         .form__more-link:hover {
             color: lightseagreen;
         }
+
         .form__button {
             max-width: 250px;
             height: 60px;
@@ -1149,10 +1167,12 @@
             border-radius: 50px;
             padding: 0 4.5vw;
         }
+
         .form__button:disabled {
             opacity: 0.5;
             cursor: not-allowed;
         }
+
         .form__footer-text {
             font-family: 'MuseoSansCyrl';
             font-size: 11px;
@@ -1170,6 +1190,7 @@
                 width: 980px;
             }
         }
+
         @media (max-width: 992px) {
 
             .top-section {
@@ -1182,7 +1203,7 @@
             }
 
             .top-section .subtitle {
-                text-shadow: 0 0 10px rgba(0,0,0,1);
+                text-shadow: 0 0 10px rgba(0, 0, 0, 1);
                 margin: 0 auto 90px auto;
             }
 
@@ -1264,6 +1285,7 @@
             .popup-reg {
                 width: auto;
             }
+
             .form__reg {
                 max-width: 350px;
             }
@@ -1278,17 +1300,21 @@
                 align-items: center;
                 margin-bottom: 0;
             }
+
             .form__item {
                 margin-right: 0;
                 margin-bottom: 30px;
             }
+
             .form__item:last-child {
                 margin-right: 0;
             }
+
             .form__input {
                 width: 350px;
                 padding: 20px 25px;
             }
+
             .form__button {
                 max-width: 350px;
                 padding: 0 133px;
@@ -1297,14 +1323,17 @@
             .form__footer-checkbox {
                 align-self: flex-start;
             }
+
             .form__footer-checkbox input {
                 margin: 0;
             }
+
             .form__footer-text {
                 font-size: 9px;
             }
 
         }
+
         @media (max-width: 768px) {
 
             .header .logo,
@@ -1407,13 +1436,13 @@
         }
 
 
-
         .footer {
             padding: 25px 0;
             background: #27292b;
             font-size: 12px;
             color: #fff;
         }
+
         .footer a {
             color: #fff;
         }
@@ -1423,13 +1452,16 @@
             .form__reg {
                 max-width: 290px;
             }
+
             .form__input {
                 width: 290px;
             }
+
             .form__button {
                 max-width: 290px;
                 padding: 0 103px;
             }
+
             .form__title {
                 font-size: 36px;
             }
@@ -1445,7 +1477,10 @@
 
 <body>
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-56965FL" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-56965FL" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
+</noscript>
 <!-- End Google Tag Manager (noscript) -->
 <div class="wrapper">
     <header class="header clearfix">
@@ -1470,11 +1505,6 @@
         </div>
         <div class="top-section-bar">
             <div class="container">
-                <ul>
-                    <li><a href="#popup-reg" class="top__section-link" data-fancybox>Бакалавриат и&nbsp;магистратура</a></li>
-                    <li><a href="#popup-reg" class="top__section-link" data-fancybox>Обучение в&nbsp;Москве</a></li>
-                    <li><a href="#popup-reg" class="top__section-link" data-fancybox>Трудоустройство с&nbsp;1-го курса</a></li>
-                </ul>
             </div>
         </div>
     </section>
@@ -1483,11 +1513,18 @@
     <section class="section1">
         <div class="container">
             <div class="title">Что такое &laquo;Кадровый резерв&raquo;?</div>
-            <div class="description description1">Это специализированная программа высшего образования, нацеленная на&nbsp;отбор и&nbsp;подготовку высококвалифицированных кадров для замещения должностей в&nbsp;крупных бизнес-структурах и&nbsp;государственном аппарате России.</div>
+            <div class="description description1">Это специализированная программа высшего образования, нацеленная на&nbsp;отбор
+                и&nbsp;подготовку высококвалифицированных кадров для замещения должностей в&nbsp;крупных
+                бизнес-структурах и&nbsp;государственном аппарате России.
+            </div>
             <div class="title">Только лучшие выпускники в&nbsp;масштабах страны и&nbsp;за&nbsp;ее&nbsp;пределами</div>
-            <div class="description description1">Ежегодно более 300 выпускников получают возможность обучаться и&nbsp;продолжить свое развитие в&nbsp;Москве.</div>
+            <div class="description description1">Ежегодно более 200 выпускников получают возможность обучаться и&nbsp;продолжить
+                свое развитие в&nbsp;Москве.
+            </div>
             <div class="title">Обучение на одном из трёх факультетов:</div>
-            <div class="description">Факультет менеджмента, Факультет графического дизайна, Факультет информационных систем и технологий</div>
+            <div class="description">Факультет менеджмента, Факультет графического дизайна, Факультет информационных
+                систем и технологий
+            </div>
         </div>
     </section>
 
@@ -1495,14 +1532,16 @@
     <section class="section2">
         <div class="container">
             <div class="title">Идеальные условия для развития</div>
-            <div class="description">Для наших студентов мы&nbsp;создали комплексную практико-ориентированную программу обучения для достижения действительно впечатляющих результатов</div>
+            <div class="description">Для наших студентов мы&nbsp;создали комплексную практико-ориентированную программу
+                обучения для достижения действительно впечатляющих результатов
+            </div>
             <div class="row">
                 <div class="col-md-7">
                     <div class="point">
                         <div class="number">1</div>
                         <div class="point-title">Практико-ориентированность</div>
                         <ul>
-                        <li>Трудоустройство с&nbsp;1-го курса для всех студентов программы</li>
+                            <li>Трудоустройство с&nbsp;1-го курса для всех студентов программы</li>
                         </ul>
                     </div>
                 </div>
@@ -1511,7 +1550,7 @@
                         <div class="number">2</div>
                         <div class="point-title">Фундаментальные знания</div>
                         <ul>
-                        <li>Получение высшего образования в&nbsp;крупнейшем ВУЗе страны</li>
+                            <li>Получение высшего образования в&nbsp;крупнейшем ВУЗе страны</li>
                         </ul>
                     </div>
                 </div>
@@ -1532,7 +1571,7 @@
                         <div class="number">4</div>
                         <div class="point-title">Два высших образования</div>
                         <ul>
-                        <li>Возможность получения двух высших образований</li>
+                            <li>Возможность получения двух высших образований</li>
                         </ul>
                     </div>
                 </div>
@@ -1540,17 +1579,32 @@
         </div>
     </section>
 
+    <script>
+        function send_email() {
+            $.ajax({
+                    url: '/send_email',
+                    dataType: "json",
+                    type: "POST",
+                    data: {
+                        userName: $('#user_name').val(),
+                        email: $('#user_email').val(),
+                        phoneNumber: $('#phone_number').val(),
+                    }
+                }
+            )
+        }
+    </script>
 
     <section class="form-section">
         <div class="container">
             <div class="landformbox">
                 <div class="landformbox-inner">
-                    <form action="https://synergy.ru/lander/alm/lander.php?r=land/index&unit=synergy&land=synergyleadership.ru&type=&version=&partner=&graccount=synergy&grcampaign=&form=middle" method="post" class="form">
+                    <form class="form">
                         <div class="formtitle">Отправь заявку сейчас</div>
-                        <p><input type="text" name="name" placeholder="Введите ваше имя" class="input" required></p>
-                        <p><input type="email" name="email" placeholder="Введите ваш e-mail" class="input" required></p>
-                        <p><input type="tel" name="phone" placeholder="Введите ваш телефон" class="input" required></p>
-                        <p class="submit"><input type="submit" value="Отправить" class="button"></p>
+                        <p><input type="text" name="name" placeholder="Введите ваше имя" class="input" id="user_name" required></p>
+                        <p><input type="email" name="email" placeholder="Введите ваш e-mail" class="input" id="user_email" required></p>
+                        <p><input type="tel" name="phone" placeholder="Введите ваш телефон" class="input" id="phone_number" required></p>
+                        <p class="submit"><input type="submit" value="Отправить" class="button" onclick="send_email()"></p>
                     </form>
                 </div>
             </div>
@@ -1564,14 +1618,14 @@
             <div class="section3-title">&laquo;Не&nbsp;будет дисциплины &mdash; не&nbsp;будет результата&raquo;</div>
             <div class="box">
                 <div class="box-inner">
-                    <div class="box-title">7&nbsp;дней в&nbsp;неделю</div>
+                    <div class="box-title">6&nbsp;дней в&nbsp;неделю</div>
                     <p>Корпоративный <br>стиль одежды</p>
                 </div>
             </div>
             <div class="box">
                 <div class="box-inner">
                     <div class="box-title">Проживание в&nbsp;общежитии</div>
-                    <p>Для всех студентов с&nbsp;1-го по&nbsp;3-й курс</p>
+                    <p>Для всех студентов с&nbsp;1-го по&nbsp;4-й курс</p>
                 </div>
             </div>
             <div class="box">
@@ -1616,27 +1670,43 @@
     <section class="section5">
         <div class="container">
             <div class="title">Наши выпускники</div>
-            <div class="description">Профессиональная элита международного уровня. В&nbsp;их&nbsp;арсенале все необходимые знания и&nbsp;навыки для стремительного карьерного роста</div>
+            <div class="description">Профессиональная элита международного уровня. В&nbsp;их&nbsp;арсенале все
+                необходимые знания и&nbsp;навыки для стремительного карьерного роста
+            </div>
             <div class="owl-carousel" data-owl-options="{items: 1, slideBy: 1, dots: false,}">
                 <div class="slide">
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="photo"><img src="{{ asset('/images/thumbnails/') }}{{ image14 }}" alt="Plokhih" /></div>
+                            <div class="photo"><img src="{{ asset('/images/thumbnails/') }}{{ image14 }}"
+                                                    alt="Plokhih"/></div>
                         </div>
                         <div class="col-md-6">
                             <div class="opinion-box">
                                 <div class="slide-wrap">
                                     <div class="name">Кирилл Плохих</div>
-                                    <div class="opinion">Хочешь получать образование, работать, получать опыт и&nbsp;строить карьеру&nbsp;&mdash; хорошо. Главное, чтобы тебя не&nbsp;обманули. Сейчас говорят одно, а&nbsp;приедешь в&nbsp;Москву&nbsp;&mdash; все будет по-другому&quot;,&nbsp;&mdash; говорили мои родители в&nbsp;2009&nbsp;году, когда я&nbsp;из&nbsp;Омска поехал поступать в&nbsp;Москву</div>
+                                    <div class="opinion">Хочешь получать образование, работать, получать опыт и&nbsp;строить
+                                        карьеру&nbsp;&mdash; хорошо. Главное, чтобы тебя не&nbsp;обманули. Сейчас
+                                        говорят одно, а&nbsp;приедешь в&nbsp;Москву&nbsp;&mdash; все будет по-другому&quot;,&nbsp;&mdash;
+                                        говорили мои родители в&nbsp;2009&nbsp;году, когда я&nbsp;из&nbsp;Омска поехал
+                                        поступать в&nbsp;Москву
+                                    </div>
                                     <strong>Сейчас</strong>
                                     <div class="opinion">
                                         <ul>
                                             <li>Родители живут в&nbsp;Москве, брат учится в&nbsp;московской школе.</li>
-                                            <li>Я прошел 5&nbsp;кругов карьеры: от&nbsp;позиции специалиста по&nbsp;продажам до&nbsp;директора образовательной программы.</li>
+                                            <li>Я прошел 5&nbsp;кругов карьеры: от&nbsp;позиции специалиста по&nbsp;продажам
+                                                до&nbsp;директора образовательной программы.
+                                            </li>
                                             <li>Благодаря программе я встретил свою любимую жену!</li>
-                                            <li>Я прошел более 40&nbsp;тренингов и&nbsp;курсов, за&nbsp;которые платил работодатель.</li>
+                                            <li>Я прошел более 40&nbsp;тренингов и&nbsp;курсов, за&nbsp;которые платил
+                                                работодатель.
+                                            </li>
                                             <li>Я руководил группами и&nbsp;отделами от&nbsp;7&nbsp;до&nbsp;50&nbsp;человек.</li>
-                                            <li>90% моих сверстников&nbsp;&mdash; работают консультантами в&nbsp;известных FMCG сетях, наверное, я&nbsp;бы тоже работал, но&nbsp;вмешался &laquo;Кадровый резерв&raquo; Университета &laquo;Синергия&raquo;, и&nbsp;я ни&nbsp;разу не&nbsp;пожалел!</li>
+                                            <li>90% моих сверстников&nbsp;&mdash; работают консультантами в&nbsp;известных
+                                                FMCG сетях, наверное, я&nbsp;бы тоже работал, но&nbsp;вмешался &laquo;Кадровый
+                                                резерв&raquo; Университета &laquo;Синергия&raquo;, и&nbsp;я ни&nbsp;разу
+                                                не&nbsp;пожалел!
+                                            </li>
                                         </ul>
                                     </div>
                                     <a href="#" class="slide-toggle">читать далее</a>
@@ -1649,14 +1719,24 @@
                 <div class="slide">
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="photo"><img src="{{ asset('/images/thumbnails/') }}{{ image13 }}" alt="Greta" /></div>
+                            <div class="photo"><img src="{{ asset('/images/thumbnails/') }}{{ image13 }}" alt="Greta"/>
+                            </div>
                         </div>
                         <div class="col-md-6">
                             <div class="opinion-box">
                                 <div class="slide-wrap">
                                     <div class="name">Грета Джанбарянц</div>
                                     <div class="opinion">
-                                        <p>Программа &laquo;Кадровый резерв&raquo;&nbsp;&mdash; это прекрасная возможность прыгнуть прямиком со&nbsp;школьной скамьи во&nbsp;взрослую, серьезную жизнь. Я, как и&nbsp;мои однокурсники, этот прыжок совершила не&nbsp;задумываясь ни&nbsp;на&nbsp;минуту. С&nbsp;тех пор я нахожусь в&nbsp;непрерывном развитии, от&nbsp;чего ежедневно получаю огромную порцию адреналина и&nbsp;положительных эмоций. За&nbsp;8&nbsp;лет моего профессионального роста менялось очень многое: должность, род занятий, сфера деятельности, команда коллег и&nbsp;даже социальный статус. Одно остается неизменным&nbsp;&mdash; подход к&nbsp;жизни. Каждый новый день&nbsp;&mdash; это возможность проявить и&nbsp;изменить себя.</p>
+                                        <p>Программа &laquo;Кадровый резерв&raquo;&nbsp;&mdash; это прекрасная
+                                            возможность прыгнуть прямиком со&nbsp;школьной скамьи во&nbsp;взрослую,
+                                            серьезную жизнь. Я, как и&nbsp;мои однокурсники, этот прыжок совершила не&nbsp;задумываясь
+                                            ни&nbsp;на&nbsp;минуту. С&nbsp;тех пор я нахожусь в&nbsp;непрерывном
+                                            развитии, от&nbsp;чего ежедневно получаю огромную порцию адреналина и&nbsp;положительных
+                                            эмоций. За&nbsp;8&nbsp;лет моего профессионального роста менялось очень
+                                            многое: должность, род занятий, сфера деятельности, команда коллег и&nbsp;даже
+                                            социальный статус. Одно остается неизменным&nbsp;&mdash; подход к&nbsp;жизни.
+                                            Каждый новый день&nbsp;&mdash; это возможность проявить и&nbsp;изменить
+                                            себя.</p>
                                     </div>
                                     <a href="#" class="slide-toggle">читать далее</a>
                                 </div>
@@ -1668,16 +1748,33 @@
                 <div class="slide">
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="photo"><img src="{{ asset('/images/thumbnails/') }}{{ image15 }}" alt="Zaycev" /></div>
+                            <div class="photo"><img src="{{ asset('/images/thumbnails/') }}{{ image15 }}" alt="Zaycev"/>
+                            </div>
                         </div>
                         <div class="col-md-6">
                             <div class="opinion-box">
                                 <div class="slide-wrap">
                                     <div class="name">Дмитрий Зайцев</div>
                                     <div class="opinion">
-                                        <p>После школы я не&nbsp;планировал связывать дальнейшее образование с&nbsp;московским вузом. Но&nbsp;все изменилось, когда в&nbsp;2010&nbsp;году проводился первый этап отбора на&nbsp;программу &laquo;Кадровый резерв&raquo; в&nbsp;Сызрани. Я считал себя активным и&nbsp;работоспособным молодым человеком, и&nbsp;решил, что эта программа отлично подойдёт для&nbsp;моего развития.</p>
-                                        <p>Свой профессиональный рост я начал с&nbsp;отдела продаж. Это был потрясающий для&nbsp;меня опыт, ведь продажи&nbsp;&mdash; это основа менеджмента. Если вы&nbsp;не&nbsp;овладеете в&nbsp;совершенстве инструментами продаж, вам будет крайне тяжело стать эффективным руководителем, за&nbsp;которым сейчас так активно охотятся работодатели на&nbsp;рынке труда. Следующей ступенью в&nbsp;моей карьерной лестнице стала дирекция программы &laquo;Кадровый резерв&raquo;. В&nbsp;2014&nbsp;году я окончил бакалавриат с&nbsp;отличием. В&nbsp;2015&nbsp;году руководил несколькими проектами в&nbsp;университете. В&nbsp;2016&nbsp;году окончил магистратуру, на&nbsp;данный момент являюсь студентом аспирантуры. С&nbsp;начала 2016&nbsp;года занимаю должность директора программы &laquo;Менеджмент в&nbsp;гостиничном и&nbsp;ресторанном бизнесе&raquo; Университета &laquo;Синергия&raquo;.</p>
-                                        <p>Если вы хотите связать свою жизнь с&nbsp;менеджментом и&nbsp;семимильными шагами развиваться в&nbsp;сфере управления, то лучшего варианта, чем программа &laquo;Кадровый резерв&raquo;, вам не&nbsp;найти.</p>
+                                        <p>После школы я не&nbsp;планировал связывать дальнейшее образование с&nbsp;московским
+                                            вузом. Но&nbsp;все изменилось, когда в&nbsp;2010&nbsp;году проводился первый
+                                            этап отбора на&nbsp;программу &laquo;Кадровый резерв&raquo; в&nbsp;Сызрани.
+                                            Я считал себя активным и&nbsp;работоспособным молодым человеком, и&nbsp;решил,
+                                            что эта программа отлично подойдёт для&nbsp;моего развития.</p>
+                                        <p>Свой профессиональный рост я начал с&nbsp;отдела продаж. Это был потрясающий
+                                            для&nbsp;меня опыт, ведь продажи&nbsp;&mdash; это основа менеджмента. Если
+                                            вы&nbsp;не&nbsp;овладеете в&nbsp;совершенстве инструментами продаж, вам
+                                            будет крайне тяжело стать эффективным руководителем, за&nbsp;которым сейчас
+                                            так активно охотятся работодатели на&nbsp;рынке труда. Следующей ступенью в&nbsp;моей
+                                            карьерной лестнице стала дирекция программы &laquo;Кадровый резерв&raquo;. В&nbsp;2014&nbsp;году
+                                            я окончил бакалавриат с&nbsp;отличием. В&nbsp;2015&nbsp;году руководил
+                                            несколькими проектами в&nbsp;университете. В&nbsp;2016&nbsp;году окончил
+                                            магистратуру, на&nbsp;данный момент являюсь студентом аспирантуры. С&nbsp;начала
+                                            2016&nbsp;года занимаю должность директора программы &laquo;Менеджмент в&nbsp;гостиничном
+                                            и&nbsp;ресторанном бизнесе&raquo; Университета &laquo;Синергия&raquo;.</p>
+                                        <p>Если вы хотите связать свою жизнь с&nbsp;менеджментом и&nbsp;семимильными
+                                            шагами развиваться в&nbsp;сфере управления, то лучшего варианта, чем
+                                            программа &laquo;Кадровый резерв&raquo;, вам не&nbsp;найти.</p>
                                     </div>
                                     <a href="#" class="slide-toggle">читать далее</a>
                                 </div>
@@ -1689,15 +1786,27 @@
                 <div class="slide">
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="photo"><img src="{{ asset('/images/thumbnails/') }}{{ image16 }}" alt="Shaldina" /></div>
+                            <div class="photo"><img src="{{ asset('/images/thumbnails/') }}{{ image16 }}"
+                                                    alt="Shaldina"/></div>
                         </div>
                         <div class="col-md-6">
                             <div class="opinion-box">
                                 <div class="slide-wrap">
                                     <div class="name">Елизавета Шалдина</div>
                                     <div class="opinion">
-                                        <p>&laquo;Кадровый резерв&raquo;&nbsp;&mdash; для&nbsp;меня это не&nbsp;просто красивое и&nbsp;звучное название. &laquo;Кадровый резерв&raquo;&nbsp;&mdash; это программа, которая дает тебе массу возможностей, а&nbsp;сможешь&nbsp;ли ты воплотить их в&nbsp;жизнь&nbsp;&mdash; зависит уже от&nbsp;тебя.</p>
-                                        <p>Поступление в&nbsp;Университет &laquo;Синергия&raquo; дает уникальную возможность&nbsp;&mdash; четкое понимание того, кем я могу стать, и&nbsp;чем буду заниматься. За&nbsp;4&nbsp;года обучения и&nbsp;работы я побывала в&nbsp;роли оператора <span style="white-space:nowrap;">call-центра,</span> менеджера по&nbsp;продажам, старшего менеджера, руководителя группы по&nbsp;продажам и&nbsp;руководителя отдела продаж. Когда тебя окружают предприимчивые и&nbsp;активные люди&mdash; профессиональное становление проходит намного быстрее. Для&nbsp;меня программа &laquo;Кадровый резерв&raquo; Университета &laquo;Синергия&raquo;&nbsp;&mdash; это синоним &laquo;быстрого карьерного роста&raquo;.</p>
+                                        <p>&laquo;Кадровый резерв&raquo;&nbsp;&mdash; для&nbsp;меня это не&nbsp;просто
+                                            красивое и&nbsp;звучное название. &laquo;Кадровый резерв&raquo;&nbsp;&mdash;
+                                            это программа, которая дает тебе массу возможностей, а&nbsp;сможешь&nbsp;ли
+                                            ты воплотить их в&nbsp;жизнь&nbsp;&mdash; зависит уже от&nbsp;тебя.</p>
+                                        <p>Поступление в&nbsp;Университет &laquo;Синергия&raquo; дает уникальную
+                                            возможность&nbsp;&mdash; четкое понимание того, кем я могу стать, и&nbsp;чем
+                                            буду заниматься. За&nbsp;4&nbsp;года обучения и&nbsp;работы я побывала в&nbsp;роли
+                                            оператора <span style="white-space:nowrap;">call-центра,</span> менеджера по&nbsp;продажам,
+                                            старшего менеджера, руководителя группы по&nbsp;продажам и&nbsp;руководителя
+                                            отдела продаж. Когда тебя окружают предприимчивые и&nbsp;активные люди&mdash;
+                                            профессиональное становление проходит намного быстрее. Для&nbsp;меня
+                                            программа &laquo;Кадровый резерв&raquo; Университета &laquo;Синергия&raquo;&nbsp;&mdash;
+                                            это синоним &laquo;быстрого карьерного роста&raquo;.</p>
                                     </div>
                                     <a href="#" class="slide-toggle">читать далее</a>
                                 </div>
@@ -1709,21 +1818,40 @@
                 <div class="slide">
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="photo"><img src="{{ asset('/images/thumbnails/') }}{{ image17 }}" alt="Skorobogatov" /></div>
+                            <div class="photo"><img src="{{ asset('/images/thumbnails/') }}{{ image17 }}"
+                                                    alt="Skorobogatov"/></div>
                         </div>
                         <div class="col-md-6">
                             <div class="opinion-box">
                                 <div class="slide-wrap">
                                     <div class="name">Сергей Скоробогатов</div>
                                     <div class="opinion">
-                                        <p>&laquo;Синергия&raquo; известна как вуз для&nbsp;будущих предпринимателей и&nbsp;руководителей высшего звена. Но&nbsp;я могу сказать, что это Университет, который ломает привычный стереотип мышления и&nbsp;учит думать <span style="white-space:nowrap;">по-новому.</span></p>
+                                        <p>&laquo;Синергия&raquo; известна как вуз для&nbsp;будущих предпринимателей и&nbsp;руководителей
+                                            высшего звена. Но&nbsp;я могу сказать, что это Университет, который ломает
+                                            привычный стереотип мышления и&nbsp;учит думать <span
+                                                    style="white-space:nowrap;">по-новому.</span></p>
                                     </div>
                                     <div class="opinion">
-                                        <p>Зачастую, чтобы открыть свое дело или&nbsp;добиться успеха, выпускникам вузов приходиться тратить на&nbsp;это многие годы. Сначала получить образование, потом поработать, наделать кучу ошибок, и&nbsp;только тогда <span style="white-space:nowrap;">что-то</span> получится. И&nbsp;то не&nbsp;всегда.</p>
-                                        <p>Я сразу ставил себе цель обеспечить не&nbsp;только себя, но&nbsp;и&nbsp;свою семью, не&nbsp;затрачивая на&nbsp;это бесконечные годы обучения.</p>
-                                        <p>Университет &laquo;Синергия&raquo; и&nbsp;программа &laquo;Кадровый резерв&raquo; дали мне возможность развиваться как профессионально, так и&nbsp;личностно. Здесь я смог совместить обучение и&nbsp;работу, и, начав с&nbsp;менеджера,&mdash; сейчас я занимаю должность Директора Департамента продаж. И&nbsp;за&nbsp;такой короткий срок я научился многому: вести переговоры, выступать перед публикой, руководить командой, быть не&nbsp;только руководителем, но&nbsp;и&nbsp;другом, наставником.</p>
-                                        <p>Университет обладает всей необходимой базой для&nbsp;построения успешной карьеры:&nbsp;&mdash; классные эксперты, тренинги и&nbsp;семинары международного уровня, опытные, а&nbsp;главное&nbsp;&mdash; практико&nbsp;&mdash; ориентированные преподаватели.</p>
-                                        <p>Если ты активный, предприимчивый и&nbsp;ставишь высокие цели,&mdash; то &laquo;Кадровый Резерв &raquo;для&nbsp;тебя!</p>
+                                        <p>Зачастую, чтобы открыть свое дело или&nbsp;добиться успеха, выпускникам вузов
+                                            приходиться тратить на&nbsp;это многие годы. Сначала получить образование,
+                                            потом поработать, наделать кучу ошибок, и&nbsp;только тогда <span
+                                                    style="white-space:nowrap;">что-то</span> получится. И&nbsp;то не&nbsp;всегда.
+                                        </p>
+                                        <p>Я сразу ставил себе цель обеспечить не&nbsp;только себя, но&nbsp;и&nbsp;свою
+                                            семью, не&nbsp;затрачивая на&nbsp;это бесконечные годы обучения.</p>
+                                        <p>Университет &laquo;Синергия&raquo; и&nbsp;программа &laquo;Кадровый резерв&raquo;
+                                            дали мне возможность развиваться как профессионально, так и&nbsp;личностно.
+                                            Здесь я смог совместить обучение и&nbsp;работу, и, начав с&nbsp;менеджера,&mdash;
+                                            сейчас я занимаю должность Директора Департамента продаж. И&nbsp;за&nbsp;такой
+                                            короткий срок я научился многому: вести переговоры, выступать перед
+                                            публикой, руководить командой, быть не&nbsp;только руководителем, но&nbsp;и&nbsp;другом,
+                                            наставником.</p>
+                                        <p>Университет обладает всей необходимой базой для&nbsp;построения успешной
+                                            карьеры:&nbsp;&mdash; классные эксперты, тренинги и&nbsp;семинары
+                                            международного уровня, опытные, а&nbsp;главное&nbsp;&mdash; практико&nbsp;&mdash;
+                                            ориентированные преподаватели.</p>
+                                        <p>Если ты активный, предприимчивый и&nbsp;ставишь высокие цели,&mdash; то
+                                            &laquo;Кадровый Резерв &raquo;для&nbsp;тебя!</p>
                                     </div>
                                     <a href="#" class="slide-toggle">читать далее</a>
                                 </div>
@@ -1743,7 +1871,9 @@
                 <div class="col-md-7"></div>
                 <div class="col-md-5">
                     <div class="title">Как стать студентом?</div>
-                    <div class="description">Помимо ЕГЭ мы&nbsp;используем 3&ndash;ступенчатую систему отбора, что позволяет нам применять индивидуальный подход к&nbsp;каждому кандидату.</div>
+                    <div class="description">Помимо ЕГЭ мы&nbsp;используем 3&ndash;ступенчатую систему отбора, что
+                        позволяет нам применять индивидуальный подход к&nbsp;каждому кандидату.
+                    </div>
                 </div>
             </div>
             <ul class="point-list">
@@ -1766,19 +1896,17 @@
         <div class="container">
             <div class="landformbox">
                 <div class="landformbox-inner">
-                    <form action="https://synergy.ru/lander/alm/lander.php?r=land/index&unit=synergy&land=synergyleadership.ru&type=&version=&partner=&graccount=synergy&grcampaign=&form=bottom" method="post" class="form">
+                    <form class="form">
                         <div class="formtitle">Отправь заявку сейчас</div>
-                        <p><input type="text" name="name" placeholder="Введите ваше имя" class="input" required></p>
-                        <p><input type="email" name="email" placeholder="Введите ваш e-mail" class="input" required></p>
-                        <p><input type="tel" name="phone" placeholder="Введите ваш телефон" class="input" required></p>
-                        <p class="submit"><input type="submit" value="Отправить" class="button"></p>
+                        <p><input type="text" name="name" placeholder="Введите ваше имя" class="input" id="user_name" required></p>
+                        <p><input type="email" name="email" placeholder="Введите ваш e-mail" class="input" id="user_email" required></p>
+                        <p><input type="tel" name="phone" placeholder="Введите ваш телефон" class="input" id="phone_number" required></p>
+                        <p class="submit"><input type="submit" value="Отправить" class="button" onclick="send_email()"></p>
                     </form>
                 </div>
             </div>
         </div>
     </section>
-
-
 
 
     <section class="section8">
@@ -1797,7 +1925,8 @@
                     <div class="contacts">
                         Казаку Роман Сергеевич<br>
                         Куратор программы &laquo;Кадровый резерв&raquo;<br>
-                        <a href="tel:+79136181518">8 (960) 928 10 79</a> <br> <a href="mailto:RKazaku@synergy.ru">RKazaku@synergy.ru</a> <br> Метро Сокол <br> Ленинградский проспект, 80Г.<br> 						</div>
+                        <a href="tel:+79136181518">8 (960) 928 10 79</a> <br> <a href="mailto:RKazaku@synergy.ru">RKazaku@synergy.ru</a>
+                        <br> Метро Сокол <br> Ленинградский проспект, 80Г.<br></div>
                 </div>
                 <div class="col-md-6">
                 </div>
@@ -1821,27 +1950,32 @@
 
 <div class="hidden">
     <div class="popup popup-reg" id="popup-reg">
-        <form action="https://synergy.ru/lander/alm/lander.php?r=land/index&unit=synergy&land=synergyleadership.ru&type=&version=&partner=&graccount=synergy&grcampaign=&form=popup" method="post" class="form form__reg">
+        <form class="form form__reg">
             <div class="form__wrapper">
                 <h3 class="form__title ">Заполните заявку на поступление</h3>
                 <div class="form__items">
                     <div class="form__item form__item_text ">
-                        <input name="name" type="text" placeholder="Ваше имя" class="form__input" required value="">
+                        <input name="name" type="text" placeholder="Ваше имя" class="form__input" id="user_name" required value="">
                     </div><!-- form__item -->
                     <div class="form__item form__item_text ">
-                        <input name="phone" type="text" placeholder="Телефон" class="form__input" required value="">
+                        <input name="phone" type="text" placeholder="Телефон" class="form__input" id="phone_number"  required value="">
                     </div><!-- form__item -->
                     <div class="form__item form__item_email ">
-                        <input name="email" type="email" placeholder="Эл.почта" class="form__input" required value="">
+                        <input name="email" type="email" placeholder="Эл.почта" class="form__input" id="user_email" required value="">
                     </div><!-- form__item -->
-                    <div class="form__item form__item_button"><button class="form__button button button_1" type="submit">Отправить</button></div>
+                    <div class="form__item form__item_button">
+                        <button class="form__button button button_1" type="submit" onclick="send_email()">Отправить</button>
+                    </div>
                 </div><!-- form__items -->
                 <div class="form__more">
                     <label class="form__footer ">
                         <div class="form__footer-checkbox"><input type="checkbox" name="personalDataAgree" checked>
                             <div class="form__footer-checkbox-icon lazy"></div>
                         </div>
-                        <div class="form__footer-text">Я&nbsp;даю согласие на&nbsp;обработку персональных данных, согласен на&nbsp;получение информационных рассылок и&nbsp;соглашаюсь с&nbsp;<a href="#privacy" class="fancybox form__more-link" data-fancybox>политикой конфиденциальности.</a></div>
+                        <div class="form__footer-text">Я&nbsp;даю согласие на&nbsp;обработку персональных данных,
+                            согласен на&nbsp;получение информационных рассылок и&nbsp;соглашаюсь с&nbsp;<a
+                                    href="#privacy" class="fancybox form__more-link" data-fancybox>политикой
+                                конфиденциальности.</a></div>
                     </label>
                 </div>
             </div>
@@ -1850,7 +1984,6 @@
 
 
 </div><!-- hidden -->
-
 
 
 <!-- Скрипт ALM Lander -->
